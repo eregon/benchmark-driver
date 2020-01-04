@@ -11,9 +11,6 @@ matrix:
   allow_failures:
     - rvm: ruby-head
 cache: bundler
-branches:
-  only:
-    - master
 before_install:
   - gem install bundler -v 1.15.4
   - gem install haml -v 4.0.7
