@@ -121,6 +121,8 @@ jobs = config.paths.flat_map do |path|
       job.merge!(BenchmarkDriver::RubyInterface.load(path))
     elsif script =~ /^\s*prelude\b/
       job.merge!(BenchmarkDriver::RubyTopLevelDSL.load(path))
+    elsif script =~ BenchmarkDriver::BenchmarkDSL::BENCHMARK_BLOCK_START
+      job.merge!(BenchmarkDriver::BenchmarkDSL.load(path, script))
     else
       # single-execution benchmark
       prelude = script.slice!(/\A(^#[^\n]+\n)+/m) || '' # preserve magic comment

@@ -8,6 +8,7 @@ require 'benchmark_driver/repeater'
 require 'benchmark_driver/ridkuse'
 require 'benchmark_driver/ruby_interface'
 require 'benchmark_driver/ruby_toplevel_dsl'
+require 'benchmark_driver/benchmark_dsl'
 require 'benchmark_driver/runner'
 require 'benchmark_driver/version'
 
